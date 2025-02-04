@@ -55,4 +55,17 @@ document.getElementById("yesNoButton").addEventListener("click", () => {
 });
 
 // Инициализация Telegram Web App
+const tg = window.Telegram.WebApp;
+
+// Инициализация
+tg.ready();
+
+// Пример: Получение данных о пользователе
+console.log("User ID:", tg.initDataUnsafe.user.id);
+console.log("User Name:", tg.initDataUnsafe.user.first_name);
+
+// Закрытие приложения
+document.getElementById("closeButton").addEventListener("click", () => {
+    tg.close();
+});
 tg.ready();
